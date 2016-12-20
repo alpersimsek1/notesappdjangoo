@@ -1,0 +1,16 @@
+
+{% extends 'notes/base.html' %}
+
+{% block body %}
+    <h2>Movies</h2>
+   <ul>
+        {% for m in all_movies %}
+            <li>
+                <h3>{{ m.name }}</h3><br>
+            <p>{{ m.release_date }}</p><br>
+            <p>{{ m.imdb_link }}</p> </li>
+            <p> </p>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

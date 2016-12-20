@@ -1,0 +1,16 @@
+
+{% extends 'notes/base.html' %}
+
+{% block body %}
+    <h2>Notes</h2>
+   <ul>
+        {% for m in all_notes %}
+            <li>
+                <h3>{{ m.title }}</h3><br>
+                <p>{{ m.body }}</p><br>
+                <p>{{ m.created_at }}</p> </li>
+
+        {% endfor %}
+
+    </ul>
+{% endblock %}
