@@ -2,14 +2,25 @@
 {% extends 'notes/base.html' %}
 
 {% block body %}
-    <h2>Movies</h2>
+    <h3>Movies</h3>
    <ul>
         {% for m in all_movies %}
             <li>
-                <h3>{{ m.name }}</h3><br>
-            <p>{{ m.release_date }}</p><br>
-            <p>{{ m.imdb_link }}</p> </li>
-            <p> </p>
+                <h4> {{ m.name }}</h4>
+            <p>Release date: {{ m.release_date }}</p>
+            <p><a href="{{ m.imdb_link }}">Imdb Link</a></p> </li>
+            <h5>Categories: </h5>
+            {% for cat in m.categories.all %}
+            <li>{{ cat.name }}</li>
+            {% endfor %}
+            <form action="{% url 'notes:movie-update' m.id %}" method="post" style="display: inline">
+              {% csrf_token %}
+              <input type="hidden" name="album_id" value="{{ album.id }}">
+              <button type="submit" class="btn btn-default btn-sm">
+                  <span class="glyphicon">Update</span>
+              </button>
+          </form>
+            <br><br>
         {% endfor %}
 
     </ul>
