@@ -51,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'lastone.urls'
+LOGIN_REDIRECT_URL = '/' # It means home view
 
 TEMPLATES = [
     {
