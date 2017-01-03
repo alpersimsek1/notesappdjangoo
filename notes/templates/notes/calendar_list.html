@@ -1,0 +1,15 @@
+{% extends 'notes/base.html' %}
+
+{% block body %}
+    <h3>Calendar Objects</h3>
+   <ul>
+        {% for m in all_calendar %}
+            <li>
+                <h4> {{ m.title }}</h4>
+            <p>When: {{ m.date_when }}</p>
+
+            <br>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

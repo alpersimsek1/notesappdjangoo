@@ -2,13 +2,13 @@
 {% extends 'notes/base.html' %}
 
 {% block body %}
-    <h2>Notes You have</h2>
+    <h3>Notes</h3>
    <ul>
         {% for m in all_notes %}
             <li>
-                <h3>{{ m.title }}</h3><br>
-                <p>{{ m.body }}</p><br>
-                <p>{{ m.created_at }}</p> </li>
+                <h4>{{ m.title }}</h4>
+                <p>{{ m.body }}</p>
+                <p>Created at: "{{ m.created_at }}"</p> </li><br>
 
         {% endfor %}
 
